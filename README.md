@@ -74,12 +74,16 @@ uv run --no-project --with pyserial python tools/serial_cmd.py --boot 25 --wait 
 CoreS3（ESP32-S3 240 MHz × 2 コア）で 1 枚を生成する時間です。既定モデル `m3_decD_deep_full`（DiT 深さ 12、blob 4.02 MB）。
 PIE なし（`-DPF_PIE=0`）と PIE ありで画像は同じです（CRC32 が一致。連続 12 回の負荷試験でも同一）。
 
+![1 枚あたりの生成時間: CoreS3 と Tab5、PIE なし / あり](docs/media/speed.png)
+
 | 設定 | PIE なし | PIE あり | 倍率 | 参考: Tab5（ESP32-P4）の PIE 版 |
 |---|---:|---:|---:|---:|
 | K=4、cfg none | 17.0 s | **4.9 s** | 3.5× | 1.27 s |
 | K=4、cfg w=4（golden の規約） | 27.9 s | **6.9 s** | 4.1× | 2.02 s |
 | K=8、cfg none（起動時の既定） | 27.9 s | **6.9 s** | 4.1× | 2.03 s |
 | K=8、cfg w=6 | 49.7 s | **10.9 s** | 4.6× | 3.52 s |
+
+グラフは `tools/speed_chart.py`（matplotlib、`uv run --no-project --with matplotlib python tools/speed_chart.py docs/media/speed.png`）で作れます。
 
 - 上流の RP2350 @300 MHz は K=4 w=4 で約 10 秒です。
 - PIE ありでは、密な行列積を `ee.vmulas.s8.accx` の内積で計算するほか、疎な行列積（fc2）と VAE の疎な畳み込みも
