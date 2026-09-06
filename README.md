@@ -3,6 +3,11 @@
 [cpldcpu/pico-faces](https://github.com/cpldcpu/pico-faces) を **M5Stack CoreS3（ESP32-S3）** で動かすファームウェアです。
 同じ移植の Tab5（ESP32-P4）版は [nnn112358/pico-faces-tab5](https://github.com/nnn112358/pico-faces-tab5) にあります。
 
+[![CoreS3 で顔を生成している様子（クリックで X の投稿の動画へ）](docs/media/demo.gif)](https://x.com/nnn112358/status/2096711242895458523)
+
+動画: [X の投稿](https://x.com/nnn112358/status/2096711242895458523)（36 秒）／
+[docs/media/demo.mp4](docs/media/demo.mp4)（同じ動画。上の GIF は冒頭 12 秒です）
+
 ## 元のリポジトリについて
 
 pico-faces は、Raspberry Pi Pico 2（RP2350）のようなマイコンで顔画像を生成する小さな拡散モデルです。
