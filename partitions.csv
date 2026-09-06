@@ -1,0 +1,6 @@
+# pico-faces on M5Stack CoreS3（16 MB flash）
+# モデル blob（最大 4.02 MB）は app の .rodata に埋め込むので factory を 6 MB 取る。
+# Name,   Type, SubType, Offset,   Size,     Flags
+nvs,      data, nvs,     0x9000,   0x6000,
+phy_init, data, phy,     0xf000,   0x1000,
+factory,  app,  factory, 0x10000,  0x600000,
